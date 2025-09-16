@@ -15,14 +15,10 @@ public class DataGenerator {
     }
 
     public static String generateDate(int shift) {
-        // TODO: добавить логику для объявления переменной date и задания её значения, для генерации строки с датой
-        // Вы можете использовать класс LocalDate и его методы для получения и форматирования даты
         return LocalDate.now().plusDays(shift).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
     }
 
     public static String generateCity(Faker faker) {
-        // TODO: добавить логику для объявления переменной city и задания её значения, генерацию можно выполнить
-        // с помощью Faker, либо используя массив валидных городов и класс Random
         String[] cities = {
                 "Абакан", "Анадырь", "Архангельск", "Астрахань", "Барнаул", "Белгород",
                 "Биробиджан", "Благовещенск", "Брянск", "Великий", "Новгород", "Владивосток",
@@ -42,8 +38,6 @@ public class DataGenerator {
     }
 
     public static String generateName(Faker faker) {
-        // TODO: добавить логику для объявления переменной name и задания её значения, для генерации можно
-        // использовать Faker
         String[] names = {
                 "Иванов Андрей", "Петрова Анна", "Сидоров Дмитрий", "Козлова Мария", "Волков Алексей", "Новикова Елена", "Морозов Александр", "Павлова Ольга", "Семенов Максим", "Андреева Татьяна", "Кузнецов Игорь", "Васильева Наталья", "Попов Никита", "Воробьева Екатерина", "Андреев Роман", "Григорьева Мария", "Степанов Павел", "Николаева Анна", "Орлова Светлана", "Федоров Георгий"
         };
@@ -51,8 +45,6 @@ public class DataGenerator {
     }
 
     public static String generatePhone(Faker faker) {
-        // TODO: добавить логику для объявления переменной phone и задания её значения, для генерации можно
-        // использовать Faker
         return faker.phoneNumber().phoneNumber();
     }
 
@@ -64,8 +56,6 @@ public class DataGenerator {
 
         public static UserInfo generateUser(String locale) {
             faker = new Faker(new Locale(locale));
-            // TODO: добавить логику для создания пользователя user с использованием методов generateCity(faker),
-            // generateName(faker), generatePhone(faker)
             return new UserInfo(generateCity(faker), generateName(faker), generatePhone(faker));
         }
     }
